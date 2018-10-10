@@ -6,10 +6,6 @@ import Admin from '../views/admin';
 import SecondPage from '../views/secondPage';
 
 class Router extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return (
             <HashRouter>
@@ -17,8 +13,11 @@ class Router extends Component {
                     <Switch>
                         <Route path='/admin' render={() =>
                           <Admin>
-                              <Route path='/admin/home' component={Home}></Route>
-                              <Route path='/admin/secondPage' component={SecondPage}></Route>
+                              <Switch>
+                                  <Route path='/admin' exact component={Home}></Route>
+                                  <Route path='/admin/secondPage' component={SecondPage}></Route>
+                                  <Route component={NotMatch}></Route>
+                              </Switch>
                           </Admin>
                         }></Route>
                         <Route component={NotMatch}></Route>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="time">
+
+    </div>
+</body>
+<script>
+    let time = document.getElementById("time")
+    let date1 = new Date()
+    let date2 = date1.getTime()
+    let date3 = new Date(date2)
+    let year = date3.getFullYear()
+    let month = date3.getMonth() + 1
+    console.log(date1)
+    console.log(date2)
+    console.log(date3)
+    console.log(year)
+    console.log(month)
+    time.innerHTML = date1
+</script>
+</html>

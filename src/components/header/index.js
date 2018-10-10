@@ -1,15 +1,39 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './index.less';
+import {formatDate } from '../../utils'
+import axios from 'axios'
 
 class Header extends Component{
-    constructor(props) {
-        super(props)
-    }
-
     state = {
         time: "2018-08-01 23:30:56 ",
         weather: "3摄氏度到16摄氏度 西北风4到5级"
+    }
+
+    getTime = () => {
+        setInterval(() => {
+            let unixDate = new Date().getTime()
+            let timeStr = formatDate(unixDate)
+            this.setState({
+                time: timeStr
+            })
+        }, 1000)
+    }
+
+    getWeather = () => {
+        axios.get( `http://t.weather.sojson.com/api/weather/city/101010100`)
+            .then(res => {
+                let date = res.data.data.forecast[0]
+                let weather = `${date.low} ${date.high} ${date.fx} ${date.fl}`
+                this.setState({
+                    weather
+                })
+        })
+    }
+
+    componentWillMount() {
+        this.getWeather()
+        this.getTime()
     }
 
     render() {

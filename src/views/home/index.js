@@ -5,7 +5,7 @@ class Home extends Component{
     render() {
         return(
             <div className="home">
-                好好敲代码,走上人生巅峰
+                好好敲代码,走上人生巅峰!
             </div>
         )
     }

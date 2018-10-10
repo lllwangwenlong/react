@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
+import './index.less';
 
 class SecondPage extends Component{
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return(
-            <div>
+            <div className="secondPage">
                 我是secondPage
             </div>
         )
