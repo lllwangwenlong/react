@@ -1,5 +1,3 @@
-import * as fetch from 'axios';
-
 export function formatDate(unix) {
     function fixedZero(num) {
         return num >= 10 ? ('' + num) : ('0' + num)
@@ -17,21 +15,4 @@ export function formatDate(unix) {
     let timeStr = `${year}-${month}-${day} ${hour}:${min}:${seconds}`
     return timeStr
 }
-
-// const instance = fetch.create({
-//     baseURL: 'http://t.weather.sojson.com/api/weather/city',
-//     timeout: 15000
-// })
-//
-// export const xhr = {
-//     get(url, data, config) {
-//         return new Promise((resolve, reject) => {
-//             instance.get(url, {params: data}, config).then(res => {
-//                 resolve(res.data)
-//             }).catch(err => {
-//                 reject(err)
-//             })
-//         })
-//     }
-// }
 

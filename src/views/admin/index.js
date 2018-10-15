@@ -13,14 +13,14 @@ class Admin extends Component{
                     <Col span={4}>
                         <NavLeft />
                     </Col>
-                    <Col span={20}>
+                    <Col span={20} className="right" >
                         <Header />
                         <div className="content-wrap">
                             <div className="content">
                                 {this.props.children}
                             </div>
                         </div>
-                        <Footer />
+                            <Footer />
                     </Col>
                 </Row>
             </div>
